@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+body {
+    background-color: #1a1a1a; /* Establece el color de fondo del cuerpo de la página */
+}
+
+main {
+    width: 90%; /* Establece el ancho del elemento principal al 90% del contenedor padre */
+    max-width: 1500px; /* Establece el ancho máximo del elemento principal a 1500px */
+    height: 652px; /* Establece la altura del elemento principal a 646px */
+    border: 3px solid white; /* Establece un borde de 1px sólido de color blanco */
+    margin: 80px auto; /* Establece un margen de 50px en la parte superior e inferior y se centra horizontalmente */
+    border-radius: 50px; /* Establece un radio de borde de 50px para crear esquinas redondeadas */
+}
+
+.container {
+    display: flex; /* Crea un contenedor flexible */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    height: 650px; /* Establece la altura del contenedor a 650px */
+}
+
+.photo img {
+    margin: 7px 0 0 0; /* Establece un margen de 81px en la parte superior y 0 en los demás lados */
+    border-radius: 8%; /* Establece un radio de borde de 8% para crear esquinas redondeadas */
+    animation: borderAnimation 10s linear infinite; /* Aplica la animación "borderAnimation" a la imagen */
+    border-width: 5px; /* Establece el ancho del borde de la imagen a 5px */
+    border-style: solid; /* Establece el estilo del borde como "solid" (sólido) */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del área de la imagen */
+    position: relative; /* Establece el contexto de posicionamiento para elementos hijos */
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: yellow; /* Define el color del borde al inicio de la animación */
+    }
+    10% {
+        border-color: yellowgreen; /* Define el color del borde en el 10% de la animación */
+    }
+    20% {
+        border-color: orange; /* Define el color del borde en el 20% de la animación */
+    }
+    30% {
+        border-color: orangered; /* Define el color del borde en el 30% de la animación */
+    }
+    40% {
+        border-color: red; /* Define el color del borde en el 40% de la animación */
+    }
+    50% {
+        border-color: yellowgreen; /* Define el color del borde en el 50% de la animación */
+    }
+    60% {
+        border-color: orange; /* Define el color del borde en el 60% de la animación */
+    }
+    70% {
+        border-color: orangered; /* Define el color del borde en el 70% de la animación */
+    }
+    80% {
+        border-color: red; /* Define el color del borde en el 80% de la animación */
+    }
+    90% {
+        border-color: yellowgreen; /* Define el color del borde en el 90% de la animación */
+    }
+    100% {
+        border-color: orange; /* Define el color del borde al final de la animación */
+    }
+}
+
+h2{
+    font-size: 32px;/* Establece el tamaño de fuente de los encabezados de nivel 2 a 32px */
+    font-weight: 700;/* Establece el grosor de fuente de los encabezados de nivel 2 a 700 */
+    font-family: 'Fugaz One', cursive;
+    color: orange;
+    position: relative; /* Establece el contexto de posicionamiento para elementos hijos */
+    Top: 34px;
+    left: 20px;
+}
+/*otra manera de ubicar los elementos con el absolte, la anterior fuecon relative*/
+.container{
+    position: relative; /* Establece el contexto de posicionamiento para elementos hijos */
+}
+
+.information h1{
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 700;
+    /*position: absolute;  Establece el contexto de posicionamiento para elementos hijos pero no es recomendable por que se desmadra cuando le hacees zoom */
+    position: relative;
+    bottom: 7px;
+    left: 20px;
+    font-family: 'Fugaz One', cursive;
+
+}
+
+.container #detalle{
+    width: 160px;
+    height: 4px;
+    background: orange;
+    position: relative;
+    bottom: 34px;
+    left: 20px;
+    
+}
+
+p{
+    width: 96%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color:white;
+    position: relative;
+    bottom: 44px;
+    left: 20px;
+}
+
+.information article{
+    border: 4px solid orange;
+    width: 94%;
+    position: relative;
+    left: 20px;
+    bottom: 44px;
+    animation: borderAnimation 10s linear infinite; /* Aplica la animación "borderAnimation" a la imagen */
+}
+
+article ul li{
+    color: #ffffff;
+    font-size: 22px;
+    font-family: 'Dosis', sans-serif;
+    list-style: none;
+    width: 48%;
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+}         
+
+.information #Redes{
+    margin: top 40px; ;
+    position: relative;
+    left: 20px;
+}
+
+.information #Redes a img{
+    width: 40px;
+    background-color: #ffffff;
+    margin-right: 20px;
+}

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*para que no se desborde el contenido*/
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;/*para que se alineen de manera flexibe en la caja*/
+    justify-content: center;/*para que se alineen en el centro pero esta alinea a los elementos horizontalmente*/
+    align-items: center;/*alinea vericamene a los elementos*/
+    min-height: 100vh;/*para que ocupe el 100% de la pantalla independientemente de si lo estiraas y asi*/
+    background: #23242a;
+}
+.box{
+    position: relative;
+    width: 370px;
+    height: 450px;
+    right: -25px;/*para que se mueva a la izquierda*/
+    background: #1c1c1c;
+    border-radius: 50px 5PX;
+    overflow: hidden;/*para que no se desborde el contenid y lo que se salga del elemento no sera mostrado al usuario*/
+    margin: none;
+}
+.box::before {/*el elemento before es para indicar que esto va detras de los elementos que estan dentro de la caja*/
+    /* Contenido vacío */
+    content: '';
+    /* Posicionamiento absoluto */
+    position: absolute;
+    /* Desplazamiento hacia arriba un 50% de la altura del contenedor */
+    top: -50%;
+    /* Desplazamiento hacia la izquierda un 50% del ancho del contenedor */
+    left: -50%;
+    /* Ancho de 370 píxeles */
+    width: 370px;
+    /* Altura de 450 píxeles */
+    height: 450px;
+    /* Degradado lineal: de transparente a #45f3ff a #45f3ff */
+    background: linear-gradient(60DEG, transparent, #45f3ff, #45f3ff);
+    /* Origen de la transformación en la esquina inferior derecha */
+    transform-origin: bottom right;
+    /* Animación llamada "animate" con duración de 6 segundos, tiempo lineal y repetición infinita */
+    animation: animate 6s linear infinite;
+}
+.box::after {/*el elemento after se utiliza para agregar decoracion despues de agegar el elemento principal*/
+    /* Contenido vacío */
+    content: '';
+    /* Posicionamiento absoluto */
+    position: absolute;
+    /* Desplazamiento hacia arriba un 50% de la altura del contenedor */
+    top: -50%;
+    /* Desplazamiento hacia la izquierda un 50% del ancho del contenedor */
+    left: -50%;
+    /* Ancho de 370 píxeles */
+    width: 370px;
+    /* Altura de 450 píxeles */
+    height: 450px;
+    /* Degradado lineal: de transparente a #45f3ff a #45f3ff */
+    background: linear-gradient(60DEG, transparent, #d9138a, #d9138a);
+    /* Origen de la transformación en la esquina inferior derecha */
+    transform-origin: bottom right;
+    /* Animación llamada "animate" con duración de 6 segundos, tiempo lineal y repetición infinita */
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;/*para que se demore 3 segundos en aparecer*/
+}
+@keyframes animate {/*esto permite crar animaciones y indicar los untos donde esa realizara aciones*/
+    0% {
+        transform: rotate(0deg); /* Al inicio de la animación, el elemento no tiene rotación */
+    }
+    100% {
+        transform: rotate(360deg); /* Al final de la animación, el elemento rota 360 grados (una vuelta completa) */
+    }
+}
+form{
+    position: absolute;
+    inset: 2px;/*para que se ajuste a los bordes de la caja*/
+    border-radius: 50px 5px;
+    background: #28292d;
+    z-index: 10;/*para que se muestre por encima de los demas elementos*/
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    color:#45f3ff;
+    font-size: 50px;
+    font-weight: 800;/*para que sea mas grueso*/
+    text-align: center;
+}
+.inputBox{
+    position: relative;
+    width:300px;
+    margin-top: 35px;
+}
+.inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;/*para que no se vea el borde outline es el borde*/
+    color: #23242a;
+    font-size: 1em;/*para que sea mas grande*/
+    letter-spacing: 0.05em;/*para que se separe un poco las letras*/
+    z-index: 10;/*para que se muestre por encima de los demas elementos*/
+}
+input[type="submit"]{
+    font-size:20px;
+    border:none;
+    outline: none;/*para que no se vea el borde outline es el borde*/
+    background: #45f3ff;
+    padding: 5px;
+    margin-top: 40px;
+    border-radius:90px;
+    font-weight: 600;/*para que sea mas grueso*/
+    cursor: pointer;/*para que se vea el cursor de la mano*/    
+}
+input[type="submit"]:active{/*para que se vea el efecto de presionar el boton*/
+    background: linear-gradient(90deg, #45f3ff, #d9138a);
+    opacity:  0,8;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 10p 10px;
+    font-size:1 em;
+    color: #8f8f8f;
+    pointer-events: none;/*para que no se pueda hacer click en el elemento*/
+    letter-spacing: 0.05em; /*para que se separe un poco las letras*/
+    transition: 0.5s;/*para que se vea el efecto de transicion*/
+}   
+/*la colita de cerdito ~ es como un filtro ue funciona como un and*/
+.box input:focus ~ span, .inputBox input:valid ~ span{/*para que se vea el efecto de transicion*/
+    transform: translateX(-10px) translateY(-30px);/*para que se mueva el texto hacia arriba*/
+    font-size: 0.75em;/*para que sea mas pequeño*/
+    color: #45f3ff;
+}
+.inputBox i{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius:4px;
+    transition: 0.5s;
+    pointer-events: none;/*para que no se pueda hacer click en el elemento*/
+    z-index:9;/*para que se muestre por encima de los demas elementos*/
+}
+.box input:focus ~ i, .inputBox input:valid ~ i{
+    height: 44px;
+}
+.links{
+    display:flex;
+    justify-content: space-between;/*para que se separen los elementos*/
+}
+.links a{
+    margin:25px 0; 
+    font-size: 1em; 
+    color: #8f8f8f;
+    text-decoration:none;
+}
+.links a:hover, .links a:nth-child(1){
+    color: #d9138a;
+}
+.links a:hover, .links a:nth-child(2){
+    color: #45f3ff;
+}
+
+.links a:nth-child(1):hover{
+    text-decoration:underline 2px; /*para que se subraye el texto*/
+    text-underline-offset: 5px;/*para que se separe el subrayado*/
+    color: #d9138a;
+}
+.links a:nth-child(2):hover{
+    text-decoration:underline 2px; /*para que se subraye el texto*/
+    text-underline-offset: 5px;/*para que se separe el subrayado*/
+}
+img{
+    position:relative;
+    width: 370px;
+    height: 444px;
+    margin:none;
+    border-radius:0px 50px 50px 0px;
+    left:-25px;
+    z-index: -1;
+    border: 2px solid;
+    animation: colorFlow 5s infinite linear;
+    /*box-shadow: 0 0 10px #45f3ff, 0 0 20px #d9138a, 0 0 30px #45f3ff, 0 0 40px #d9138a, 0 0 50px #45f3ff;*//*para que se vea el efecto como de una luz de fondo*/
+}
+@keyframes colorFlow {
+    0% {
+      border-color: #d9138a;
+    }
+    25% {
+      border-color: #45f3ff;
+    }
+    50% {
+      border-color: #45f3ff;
+    }
+    75% {
+      border-color: #d9138a;
+    }
+    100% {
+      border-color: #d9138a;
+    }
+  }
